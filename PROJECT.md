@@ -84,15 +84,20 @@ automatic trading or payments, Discord self-bots.
 | Phase | What | Status |
 |---|---|---|
 | 0 | Repo + project memory files | ✅ |
-| 1 | Install tools, Hermes as "Shadow", Telegram, Obsidian memory, lockdown, persona | ⏳ Hermes v0.23.3 installed, persona in SOUL.md, approvals=manual, write-safe-root set, Telegram live (2026-11-24). Left: Telegram tool settings, auto-start, vault link, day-one interview |
-| 2 | Briefings: Gmail read-only, news, subscription reminders, price alerts | |
-| 3 | Windows companion: wake word, Spotify, Discord | |
-| 4 | Android app: default assistant, "Hey Shadow", voice | |
-| 5 | Business: DM inbox, content pipeline, reader/doer split | |
+| 1 | Hermes as "Shadow", persona, ChatGPT brain, lockdown (manual approvals, write-safe-root), Telegram locked to owner + auto-start, Obsidian memory link, day-one interview | ✅ 2026-11-24 |
+| 2 | Gmail **read-only** (subscription invoices, user issue reports), `bills.md` tracker + reminders, meeting reminders from forwarded messages, daily brief at 1 pm (after quiet hours) | ⏳ |
+| 3 | Android app: notification listener (Messenger work chat, Viber, Shopee/SPayLater, MariBank, GCash, BPI) → auto bills/installments + meeting changes; then "Hey Shadow" + voice | |
+| 4 | Windows companion: Discord join/mute, Spotify | |
+| 5 | Business: The Craystead inbox/content; per-project monitoring (read-only repo access, free uptime checks, alert on failure) | |
 | 6 | Home Assistant + TV | |
-| 7 | Fine-tune personality on free cloud GPUs; more devices | |
+| 7 | Fine-tune personality on free cloud GPUs; market alerts; more devices | |
+
+**Priorities (from owner, day one):** is my software working → bills due → business needs attention → inbox/news → expense patterns → small reminders. Free / low-token options first.
+
+**Bills tracker sources:** Gmail invoices (phase 2) → phone notifications (phase 3) → monthly 30-second screenshot check-in to reconcile. Shadow never logs into or navigates banking/e-wallet apps.
 
 ## Open questions
 - Phone brand/model (affects background-app killing)
+- Messenger/Viber have no official bot API for personal chats → read via Android notifications (phase 3)
 - TV brand (affects how much control is possible)
 - Which local model to standardize on (decide after testing in phase 1)

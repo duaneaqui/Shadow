@@ -14,3 +14,5 @@
 | 2026-11-24 | **Option B lockdown**: terminal on with `approvals.mode: manual`; `HERMES_WRITE_SAFE_ROOT` = Shadow-Workspace, Shadow-Mind, Hermes home; code_execution, delegation, computer use off | Owner wants hands on but approves anything risky; re-enable computer use in phase 3 |
 | 2026-11-24 | Hermes installed with `-SkipComputerUse -NonInteractive`; runs from `Documents\Shadow-Workspace` | Configure each part deliberately; never start in System32 |
 | 2026-11-24 | Telegram locked to owner ID; home channel = owner's DM | Only owner can talk to Shadow |
+| 2026-11-24 | Gmail via own read-only MCP reader (`gmail.readonly` only), Google app stays in **Testing** mode | Hermes built-ins (App Password / Workspace skill) can send+delete; publishing needs real homepage + privacy policy, so weekly `auth.py` re-sign-in for now. Option: GitHub Pages policy later |
+| 2026-11-24 | Build order changed: Android app (notification reader) is phase 3, Windows companion phase 4 | Messenger/Viber/Shopee/banks only reachable via phone notifications; owner priorities |

@@ -39,3 +39,7 @@ Thumbs.db
 
 # Local check output
 scripts/check-results.txt
+
+# Gmail reader secrets (normally stored outside the repo)
+credentials.json
+token.json

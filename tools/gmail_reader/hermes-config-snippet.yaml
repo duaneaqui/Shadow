@@ -1,0 +1,12 @@
+# Paste at the END of %LOCALAPPDATA%\hermes\config.yaml
+# (only if config.yaml has no other line starting with "mcp_servers:")
+mcp_servers:
+  gmail_reader:
+    command: "C:\\Users\\Acer Nitro Gaming\\Desktop\\Shadow\\tools\\gmail_reader\\.venv\\Scripts\\python.exe"
+    args: ["C:\\Users\\Acer Nitro Gaming\\Desktop\\Shadow\\tools\\gmail_reader\\server.py"]
+    env:
+      SHADOW_GMAIL_DIR: "C:\\Users\\Acer Nitro Gaming\\AppData\\Local\\shadow-secrets\\gmail"
+    tools:
+      include: [search_emails, read_email]
+      prompts: false
+      resources: false

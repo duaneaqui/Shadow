@@ -1,0 +1,41 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+
+# Shadow's private memory (lives outside the repo, but just in case)
+Shadow-Mind/
+memory/
+*.db
+*.sqlite
+
+# Models and large files
+models/
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / Android
+node_modules/
+.gradle/
+build/
+local.properties
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local check output
+scripts/check-results.txt

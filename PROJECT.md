@@ -33,8 +33,8 @@ It is **not** an operating system. It is an AI layer that sits on top of every d
 ### Models
 | Role | Model | Why |
 |---|---|---|
-| Everyday + private brain (80–90% of work) | Local model via Ollama on RTX 2050 (4 GB VRAM) — 3–4B class | Free, private |
-| Hard thinking | ChatGPT subscription via "Sign in with ChatGPT" | Already paid for; officially allowed in own tools |
+| Main brain (Hermes agent loop) | ChatGPT subscription via Codex OAuth (`gpt-6.2-sol` at setup) | Already paid for; officially allowed; small local models fumble Hermes's many tools |
+| Helper / cheap background + private tasks | Local `qwen3:4b` via Ollama on RTX 2050 (4 GB VRAM) | Free, private |
 | Public, non-personal tasks only | Gemini free tier | Free — but trains on prompts outside EU/UK, so never personal data |
 | Ears / voice / wake word / memory search | Hugging Face: Whisper, Kokoro or Piper, openWakeWord, multilingual embeddings | Local, swappable |
 
@@ -84,7 +84,7 @@ automatic trading or payments, Discord self-bots.
 | Phase | What | Status |
 |---|---|---|
 | 0 | Repo + project memory files | ✅ |
-| 1 | Install tools, Hermes as "Shadow", Telegram, Obsidian memory, lockdown, persona | ⏳ |
+| 1 | Install tools, Hermes as "Shadow", Telegram, Obsidian memory, lockdown, persona | ⏳ Hermes v0.23.3 installed, persona in SOUL.md, approvals=manual, write-safe-root set, Telegram live (2026-11-24). Left: Telegram tool settings, auto-start, vault link, day-one interview |
 | 2 | Briefings: Gmail read-only, news, subscription reminders, price alerts | |
 | 3 | Windows companion: wake word, Spotify, Discord | |
 | 4 | Android app: default assistant, "Hey Shadow", voice | |

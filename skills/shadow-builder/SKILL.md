@@ -14,6 +14,15 @@ You are the **lead**. You plan, delegate, review and report. Codex agents write 
   (your own config, `.env`, skills, memory), `shadow-secrets`, `shadow-data`, or anywhere else.
   Your own configuration, permissions and safety rules are changed only by the owner.
 
+## Environment (Windows)
+- Builders run in Codex's Windows sandbox: they can read `C:\Program Files` but NOT the owner's
+  `AppData`. Use only tools on PATH: `python` (system-wide Python 3.13), `node`, `npm`, `git`.
+- Each Python project gets its own venv: `python -m venv .venv`, then `.venv\Scripts\python.exe`.
+- If a required tool is missing or blocked: **stop and report it to the owner**. Do NOT search the
+  filesystem or registry for alternatives, do NOT use interpreters bundled inside other apps, do NOT
+  try to download installers.
+- Tell every Codex task these rules (include them in the project's AGENTS.md).
+
 ## Workflow for every request
 1. **Clarify** if the request is ambiguous or conflicts with earlier decisions — ask before building.
 2. **Spec**: write/update `AGENTS.md` in the project root: goal, scope, out-of-scope, stack, how to run

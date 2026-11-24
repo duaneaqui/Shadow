@@ -33,13 +33,15 @@ Design: Shadow = lead/orchestrator → Codex CLI builders (`codex exec --sandbox
 owner approves merges / new deps / anything online. Never `--yolo` / bypass / `danger-full-access`.
 Shadow's own config/secrets/rules are owner-only.
 
-Setup steps given to owner (check which are done):
+Setup steps — **ALL DONE 2026-11-25** (Codex 0.171.0 logged in via ChatGPT; system-wide Python 3.13.17 at `C:\Program Files\Python313` so the sandbox can see it; `hello-test` passed; skill `shadow-builder` enabled):
 - **B1** `codex --version`; `codex login status` (login with ChatGPT if needed)
 - **B2** create `Documents\Shadow-Projects`; prepend it to `HERMES_WRITE_SAFE_ROOT` in hermes `.env` (.NET UTF-8 edit, backup `env.backup.txt`)
 - **B3** test: `hello-test` repo + `codex exec --sandbox workspace-write "Create hello.py ..."` — confirms Windows sandbox works
 - **B4** copy skill into hermes skills, `hermes config check`, `hermes skills list | Select-String shadow-builder`, restart gateway
 
 ## Next projects (built BY Shadow in builder mode)
+First build started from Telegram: **Shadow Archive v0.1** (see prompt in chat history / below).
+
 1. **Shadow Archive** (owner priority — chats hit length limits): import claude.ai export + Telegram
    history + vault notes + repo docs → chunk → local Hugging Face embeddings (bge / nomic-embed, run
    locally) → single-file local vector store → MCP tool `search_archive` (+ periodic summaries).

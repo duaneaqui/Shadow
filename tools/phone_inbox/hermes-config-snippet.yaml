@@ -1,0 +1,9 @@
+  phone_inbox:
+    command: "C:\\Users\\Acer Nitro Gaming\\Desktop\\Shadow\\tools\\phone_inbox\\.venv\\Scripts\\python.exe"
+    args: ["C:\\Users\\Acer Nitro Gaming\\Desktop\\Shadow\\tools\\phone_inbox\\mcp_server.py"]
+    env:
+      SHADOW_PHONE_DIR: "C:\\Users\\Acer Nitro Gaming\\AppData\\Local\\shadow-data\\phone_inbox"
+    tools:
+      include: [list_phone_notifications]
+      prompts: false
+      resources: false

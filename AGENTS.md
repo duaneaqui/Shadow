@@ -27,6 +27,17 @@ it is the source of truth for vision, architecture, features and ground rules.
 - Hugging Face: `.safetensors`/`.gguf` from known orgs only; never `trust_remote_code`.
 - When a feature comes close to one of these lines, say so and propose the clean version.
 
+## Windows gotchas (learned the hard way)
+- Owner's shell is **Windows PowerShell 5.1**: `Get-Content`/`Set-Content` default to ANSI and corrupt UTF-8
+  files (Hermes `config.yaml` has non-ASCII comments). To edit text files use
+  `[System.IO.File]::ReadAllLines/WriteAllLines($p, $lines, (New-Object System.Text.UTF8Encoding $false))`,
+  and always back up first.
+- Never give "append this snippet" steps that are unsafe to run twice; check for the key first.
+- Hermes falls back to **default settings** (approvals not manual!) when `config.yaml` is invalid —
+  always run `hermes config check` before `hermes gateway start` after any config edit.
+- Commands must use full paths; the owner's PowerShell often starts in `C:\WINDOWS\System32`.
+- `pythonw` has no stdout/stderr — background Python services must log to a file.
+
 ## Style
 - Plain language explanations; the owner is learning as we go.
 - Prefer existing, well-maintained tools (Hermes Agent, Home Assistant, Ollama) over writing from scratch.

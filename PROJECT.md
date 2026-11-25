@@ -88,7 +88,7 @@ automatic trading or payments, Discord self-bots.
 | 2 | Gmail **read-only** (subscription invoices, user issue reports), `bills.md` tracker + reminders, meeting reminders from forwarded messages, daily brief at 1 pm (after quiet hours) | ✅ 2026-11-24 |
 | 3a | ✅ 2026-11-25 Phone inbox + Shadow Companion notification bridge (Tailscale) | ✅ |
 | 3.5 | **Builder mode**: Shadow orchestrates Codex builders in `Documents\Shadow-Projects` (playbook `skills/shadow-builder`) | ✅ 2026-11-25 |
-| 3.6 | **Shadow Archive** (built by Shadow): searchable local memory of all chats/notes via HF embeddings + MCP search | v0.1 ✅ 2026-11-25; v0.2 ⏳ |
+| 3.6 | **Shadow Archive** (built by Shadow): searchable local memory of all chats/notes via HF embeddings + MCP search | v0.1 + v0.2 ✅ 2026-11-25 (MCP search live, chats imported); v0.3 search quality ⏳ |
 | 3b | Android app: "Hey Shadow" wake word, voice, default assistant | |
 | 4 | Windows companion: Discord join/mute, Spotify | |
 | 5 | Business: The Craystead inbox/content; per-project monitoring (read-only repo access, free uptime checks, alert on failure) | |

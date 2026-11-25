@@ -41,7 +41,8 @@ Setup steps — **ALL DONE 2026-11-25** (Codex 0.171.0 logged in via ChatGPT; sy
 
 ## Next projects (built BY Shadow in builder mode)
 **Shadow Archive v0.1 DONE 2026-11-25** — built by Shadow via builder mode in `Documents\Shadow-Projects\shadow-archive` (local git, main @ c0925ed). fastembed + BAAI/bge-small-en-v1.5 in project `.models`, SQLite store, CLI `index` / `search`, 59 tests. Indexes Shadow-Mind vault + Shadow docs + PROJECT.md read-only; skips junctions/symlinks (e.g. Shadow-Memory). Known issues logged in its TASKS.md.
-**Next: Archive v0.2** = MCP tool `search_archive` for Shadow, import claude.ai chat export (owner exports via Settings → Privacy → Export data, saves into vault), Telegram history, weekly summaries.
+**Archive v0.2 DONE 2026-11-25**: MCP tool `search_archive` live in Hermes config (`mcp_servers: shadow-archive`, offline env, sampling off). Imported claude.ai export (multi-part: manifest + 4 ZIPs; `conversations-000.zip` → 31 convos / 609 passages, incl. the chat that started Shadow) and Telegram Desktop JSON (197 msgs / 207 passages) from `Documents\Shadow-Mind\Imports`. Weekly-note previews built (vault writes + Monday 1:30 pm schedule still OFF until a real preview is checked: citations must point to sources, never the note itself).
+**Next: Archive v0.3** = search quality: hybrid keyword+embedding search, collapse echoed/duplicate passages (pasted search results crowd out originals), rank original discussion higher, evaluation set with expected answers.
 Lessons now in the playbook: venv from system Python 3.13; installs/model downloads done by Shadow outside sandbox with approval; caches inside project; review stop rule (one fix round, then blockers only).
 
 1. **Shadow Archive** (owner priority — chats hit length limits): import claude.ai export + Telegram

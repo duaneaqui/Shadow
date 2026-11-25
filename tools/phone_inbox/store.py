@@ -52,7 +52,7 @@ def prune(db):
     db.commit()
 
 
-def query(db, since_hours=24.0, app=None, flagged_only=False, limit=50):
+def query(db, since_hours=24.0, app=None, flagged_only=False, limit=50, category=None):
     sql = "SELECT * FROM events WHERE received_at >= ?"
     args = [time.time() - float(since_hours) * 3600]
     if app:
@@ -60,6 +60,9 @@ def query(db, since_hours=24.0, app=None, flagged_only=False, limit=50):
         args.append(app)
     if flagged_only:
         sql += " AND flagged = 1"
+    if category:
+        sql += " AND category = ?"
+        args.append(category)
     sql += " ORDER BY COALESCE(posted_at, received_at) DESC LIMIT ?"
     args.append(int(limit))
     return [dict(r) for r in db.execute(sql, args).fetchall()]

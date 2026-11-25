@@ -81,19 +81,37 @@ iPhone/Apple, a real operating system, self-copying onto devices via USB, local 
 automatic trading or payments, Discord self-bots.
 
 ## Build order
+### Master plan (2026-11-25): one Shadow, several domains
+
+```
+YOU (Telegram · voice · morning page)  ⇅ approvals
+SHADOW = lead: one persona, one memory, one rulebook, priorities, approval gates
+ ├─ PERSONAL domain  — bills, meetings, reminders, health nudges, cats, news, music, home/TV
+ ├─ BUSINESS domain  — comms, sales, clients, invoices, marketing, tech (roster)
+ └─ BUILDER domain   — Shadow builds new jobs/tools via Codex in Documents\Shadow-Projects
+COMMS ROUTER (reader/doer split) ← every input first: Gmail · phone notifications · Telegram · later Calendar/Drive/socials
+```
+- **Jobs are plain files**: each job = one Markdown playbook + trigger (schedule or event) in
+  `Shadow-Mind\Ops\{personal,business}\jobs\`. Owner edits the file → next run follows it.
+- `Shadow-Mind\Ops\roster.md` lists every job (live/paused, runs today, last result); `Ops\morning\` holds daily pages.
+- **Cost ladder in every playbook**: rules first → local Hugging Face model → ChatGPT brain only for judgment → paid API last (video only).
+- Personal stays primary. Quiet hours 7 am–1 pm. Money / public / messaging others always wait for owner's yes.
+- Bank feed: no PH personal bank API and no banking-app automation → reconcile from notifications, receipts, statements.
+
 | Phase | What | Status |
 |---|---|---|
-| 0 | Repo + project memory files | ✅ |
-| 1 | Hermes as "Shadow", persona, ChatGPT brain, lockdown (manual approvals, write-safe-root), Telegram locked to owner + auto-start, Obsidian memory link, day-one interview | ✅ 2026-11-24 |
-| 2 | Gmail **read-only** (subscription invoices, user issue reports), `bills.md` tracker + reminders, meeting reminders from forwarded messages, daily brief at 1 pm (after quiet hours) | ✅ 2026-11-24 |
-| 3a | ✅ 2026-11-25 Phone inbox + Shadow Companion notification bridge (Tailscale) | ✅ |
-| 3.5 | **Builder mode**: Shadow orchestrates Codex builders in `Documents\Shadow-Projects` (playbook `skills/shadow-builder`) | ✅ 2026-11-25 |
-| 3.6 | **Shadow Archive** (built by Shadow): searchable local memory of all chats/notes via HF embeddings + MCP search | v0.1 + v0.2 ✅ 2026-11-25 (MCP search live, chats imported); v0.3 search quality ⏳ |
-| 3b | Android app: "Hey Shadow" wake word, voice, default assistant | |
+| 0–2 | Repo, Hermes "Shadow", Telegram, lockdown, Gmail read-only, bills tracker, daily brief | ✅ 2026-11-24 |
+| 3a | Phone inbox + Shadow Companion notification bridge (Tailscale) | ✅ 2026-11-25 |
+| 3.5 | Builder mode (playbook `skills/shadow-builder`) | ✅ 2026-11-25 |
+| 3.6 | Shadow Archive v0.1–v0.2 (MCP search, chats imported, weekly notes) | ✅ 2026-11-25; v0.3 search quality ⏳ |
+| **BOS-1** | **Tech: Ops folder, roster.md, job-file format, morning page (personal + business)** | ⏳ next |
+| BOS-2 | Comms router + reader/doer split (local HF classifier first, brain for unclear) | |
+| P-1 | Personal automations: bills sync from phone events, auto meeting reminders, health nudges | |
+| 3b | Android: "Hey Shadow" wake word, voice, default assistant | |
+| BOS-3 | Marketing: idea → script/post/newsletter, owner approval before anything goes out | |
 | 4 | Windows companion: Discord join/mute, Spotify | |
-| 5 | Business: The Craystead inbox/content; per-project monitoring (read-only repo access, free uptime checks, alert on failure) | |
-| 6 | Home Assistant + TV | |
-| 7 | Fine-tune personality on free cloud GPUs; market alerts; more devices | |
+| BOS-4 | Sales (lead scoring + drafts), Clients (onboarding checklist), Invoices (schedule, reminders, reconciliation) — when real clients exist | |
+| 6–7 | Home Assistant + TV; fine-tuning; market alerts | |
 
 **Priorities (from owner, day one):** is my software working → bills due → business needs attention → inbox/news → expense patterns → small reminders. Free / low-token options first.
 

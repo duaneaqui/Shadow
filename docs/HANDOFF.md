@@ -40,7 +40,9 @@ Setup steps — **ALL DONE 2026-11-25** (Codex 0.171.0 logged in via ChatGPT; sy
 - **B4** copy skill into hermes skills, `hermes config check`, `hermes skills list | Select-String shadow-builder`, restart gateway
 
 ## Next projects (built BY Shadow in builder mode)
-First build started from Telegram: **Shadow Archive v0.1** (see prompt in chat history / below).
+**Shadow Archive v0.1 DONE 2026-11-25** — built by Shadow via builder mode in `Documents\Shadow-Projects\shadow-archive` (local git, main @ c0925ed). fastembed + BAAI/bge-small-en-v1.5 in project `.models`, SQLite store, CLI `index` / `search`, 59 tests. Indexes Shadow-Mind vault + Shadow docs + PROJECT.md read-only; skips junctions/symlinks (e.g. Shadow-Memory). Known issues logged in its TASKS.md.
+**Next: Archive v0.2** = MCP tool `search_archive` for Shadow, import claude.ai chat export (owner exports via Settings → Privacy → Export data, saves into vault), Telegram history, weekly summaries.
+Lessons now in the playbook: venv from system Python 3.13; installs/model downloads done by Shadow outside sandbox with approval; caches inside project; review stop rule (one fix round, then blockers only).
 
 1. **Shadow Archive** (owner priority — chats hit length limits): import claude.ai export + Telegram
    history + vault notes + repo docs → chunk → local Hugging Face embeddings (bge / nomic-embed, run

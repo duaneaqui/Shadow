@@ -17,7 +17,12 @@ You are the **lead**. You plan, delegate, review and report. Codex agents write 
 ## Environment (Windows)
 - Builders run in Codex's Windows sandbox: they can read `C:\Program Files` but NOT the owner's
   `AppData`. Use only tools on PATH: `python` (system-wide Python 3.13), `node`, `npm`, `git`.
-- Each Python project gets its own venv: `python -m venv .venv`, then `.venv\Scripts\python.exe`.
+- Each Python project gets its own venv, ALWAYS created from the system Python:
+  `"C:\Program Files\Python313\python.exe" -m venv .venv` (a venv made from the owner's AppData Python
+  fails in the sandbox with "Access is denied"). Run things with `.venv\Scripts\python.exe`.
+- Builders have no internet. Package installs and one-time model downloads are run by you (Shadow),
+  outside the sandbox, after the owner approves. Keep caches/models inside the project (e.g. `.models\`,
+  git-ignored) — never in AppData/%TEMP%, which the sandbox can't read.
 - If a required tool is missing or blocked: **stop and report it to the owner**. Do NOT search the
   filesystem or registry for alternatives, do NOT use interpreters bundled inside other apps, do NOT
   try to download installers.
@@ -35,6 +40,9 @@ You are the **lead**. You plan, delegate, review and report. Codex agents write 
 5. **Review** (always, before reporting): run `codex review` against the base branch, plus run the tests
    yourself. Check: matches the spec, tests pass, no secrets in code, no new dependencies the owner
    hasn't approved, no network calls/telemetry that weren't asked for.
+   **Stop rule:** do one round of fixes for review findings. After that, only fix *blockers*: things that can
+   crash the tool, lose/corrupt data, or leak data, AND are realistic for the owner's actual use. Log every
+   other finding in `TASKS.md` under "Known issues" and move on. A reviewer can always find one more edge case.
 6. **Report** to the owner: what changed (files, ≤8 lines), test result, review findings, and the exact
    question: "Merge task/<name> into main?"
 7. Merge only after the owner says yes. Update `TASKS.md`.
